@@ -5,8 +5,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="row">
-          <div className="col s12 m6">
+        <div className="row valign-wrapper">
+          <div className="col s6 offset-s3">
             <div className="card darken-1">
               <div className="card-content black-text">
                 <span className="card-title left-align">What is this a picture of?</span>
@@ -27,8 +27,7 @@ class App extends Component {
                 <button className="btn" type="submit" name="">Submit</button>
               </div>
               <div>
-                <div className="">
-                  <i>X</i>
+                <div className="card-panel grey lighten-1">
                   <p>I just love cookies and a warm cup of coffee!</p>
                 </div>
               </div>
