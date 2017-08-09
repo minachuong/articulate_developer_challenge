@@ -7,7 +7,7 @@ class BlockKnowledge extends Component {
   render() {
     return (
       <div className="row valign-wrapper">
-        <div className="col s6 offset-s3">
+        <div className="col m8 offset-m2">
           <div className="block-knowledge__wrapper">
             <QuizCard />
           </div>
