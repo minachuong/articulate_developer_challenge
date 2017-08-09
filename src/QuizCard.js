@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
+import './QuizCard.css'
 
 class QuizCard extends Component {
   
   render() {
     return (
-      <div className="card darken-1">
+      <div>
         <div className="card-content black-text">
           <span className="card-title left-align">What is this a picture of?</span>
           <img className="responsive-img" alt="" src="https://cdn.articulate.com/rise/courses/FtHG0DN2jjp0KHxN/d229V-nstxA6tZdi.gif" />
