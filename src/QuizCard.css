@@ -7,16 +7,34 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  align-items: center;
   vertical-align: baseline;
 }
 
 .quiz-card__title {
+  position: relative;
   font-family: 'Merriweather' !important;
   font-size: 1.7rem;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 2;
   letter-spacing: -.02rem;
   margin-bottom: 2rem;
   text-align: left;
+}
+
+.quiz-card__container {
+  width: 100%;
+  position: relative;
+  max-width: 102rem;
+  background: #fff;
+}
+
+.quiz-card__answers {
+  margin-top: 1.5rem;
+  padding: 1rem 0 2.5rem;
+  border-top: .1rem solid #eaeaeb;
+}
+
+.figure-image {
+  margin-bottom: 4rem;
+  max-width: 100%;
 }
