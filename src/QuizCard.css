@@ -10,11 +10,21 @@
   vertical-align: baseline;
 }
 
+.quiz-card__main {
+  float: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  min-height: 1px;
+}
+
 .quiz-card__title {
   position: relative;
   font-family: 'Merriweather' !important;
   font-size: 1.7rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 2;
   letter-spacing: -.02rem;
   margin-bottom: 2rem;
@@ -29,7 +39,6 @@
 }
 
 .quiz-card__answers {
-  margin-top: 1.5rem;
   padding: 1rem 0 2.5rem;
   border-top: .1rem solid #eaeaeb;
 }
@@ -37,4 +46,9 @@
 .figure-image {
   margin-bottom: 4rem;
   max-width: 100%;
+}
+
+.figure-image__image {
+  max-width: 100%;
+  max-height: 38rem;
 }

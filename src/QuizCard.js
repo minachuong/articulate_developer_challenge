@@ -25,23 +25,23 @@ class QuizCard extends Component {
     const { question, answers, feedback, imageURL } = this.state
     return (
       <div className="quiz-card">
-        <div className="quiz-card__title">
-          <p>{question}</p>
-        </div>
-        <figure>
-          <img className="figure-image" alt="" src={imageURL} />
-        </figure>
-        <div className="quiz-card__answers">
-          {answers.map((answer) => <QuizAnswer key={answer.id} answer={answer}/>)}
-        </div>
-        <div className="card-action">
-          <button className="btn" type="submit" name="">Submit</button>
-        </div>
-        <div>
-          <div className="card-panel grey lighten-1">
-            <p>{feedback}</p>
+          <div className="quiz-card__title">
+            <p>{question}</p>
           </div>
-        </div>
+          <figure className="figure-image">
+            <img className="figure-image__image" alt="" src={imageURL} />
+          </figure>
+          <div className="quiz-card__answers left-align">
+            {answers.map((answer) => <QuizAnswer key={answer.id} answer={answer}/>)}
+          </div>
+          <div className="card-action">
+            <button className="btn" type="submit" name="">Submit</button>
+          </div>
+          <div>
+            <div className="card-panel grey lighten-1">
+              <p>{feedback}</p>
+            </div>
+          </div>
       </div>  
     )
   }

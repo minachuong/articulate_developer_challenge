@@ -7,10 +7,12 @@ class BlockKnowledge extends Component {
   render() {
     return (
       <div className="row valign-wrapper">
-        <div className="col m8 offset-m2">
-          <div className="block-knowledge__wrapper">
-            <QuizCard />
-          </div>
+        <div className="col m12 s12">
+          <div className="block-knowledge__container">
+            <div className="block-knowledge__wrapper">
+              <QuizCard />
+            </div>
+          </div>  
         </div>
       </div>  
     )

@@ -1,0 +1,20 @@
+.quiz-answer {
+  font-family: Lato !important;
+  padding: 2rem 2rem 2rem 4.5rem;
+  position: relative;
+  display: block;
+}
+
+.quiz-answer__input {
+  display: none;
+}
+
+.quiz-answer__label {
+  display: block;
+  font-size: 1.6rem;
+  color: inherit;
+}
+
+.quiz-answer:hover {
+  background: #f7f7f8;
+}
