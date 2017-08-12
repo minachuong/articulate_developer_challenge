@@ -6,7 +6,8 @@
     "materialize-css": "^0.100.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-scripts": "1.0.10"
+    "react-scripts": "1.0.10",
+    "webfontloader": "^1.6.28"
   },
   "scripts": {
     "start": "react-scripts start",
