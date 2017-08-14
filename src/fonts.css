@@ -51,3 +51,12 @@
        url('./fonts/lato-v13-latin/lato-v13-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
        url('./fonts/lato-v13-latin/lato-v13-latin-regular.svg#Lato') format('svg'); /* Legacy iOS */
 }
+
+/* icomoon-free  */
+@font-face {
+  font-family: 'IcoMoon-Free';
+  src: url('./fonts/IcoMoon-Free.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
