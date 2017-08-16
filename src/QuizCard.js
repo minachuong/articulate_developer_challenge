@@ -31,7 +31,7 @@ class QuizCard extends Component {
           <figure className="figure-image">
             <img className="figure-image__image" alt="" src={imageURL} />
           </figure>
-          <div className="quiz-card__answers left-align">
+          <div className="quiz-card__answers">
             {answers.map((answer) => <QuizAnswer key={answer.id} answer={answer}/>)}
           </div>
           <div className="card-action">

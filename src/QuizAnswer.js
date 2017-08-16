@@ -11,6 +11,8 @@ class QuizAnswer extends Component {
         <input type="radio" className="quiz-answer__input" name="answer1" id={answer.id} />
         <label htmlFor={answer.id} className="quiz-answer__label">
           <span className="quiz-answer__radio">
+            <i className="icon icon-tick">
+            </i>
           </span>
           <p>{answer.answer}</p>
         </label>

@@ -1,6 +1,5 @@
 .quiz-answer {
   font-family: Lato !important;
-  padding: 2rem 2rem 2rem 4.5rem;
   position: relative;
   display: block;
 }
@@ -12,7 +11,12 @@
 .quiz-answer__label {
   display: block;
   font-size: 1.6rem;
+  user-select: none;
+  word-wrap: break-word;
+  cursor: pointer;
+  transition: opacity .3s;
   color: inherit;
+  padding: 2rem 2rem 2rem 6.5rem;
 }
 
 .quiz-answer:hover {
@@ -30,6 +34,15 @@
 
 .icon {
   /* use !important to prevent issues with browser extensions that change fonts */
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 2;
+  text-align: center;
+  width: 1.9rem;
+  height: 1.8rem;
+  font-size: .8rem;
   font-family: 'IcoMoon-Free' !important;
   speak: none;
   font-style: normal;
@@ -37,16 +50,40 @@
   font-variant: normal;
   text-transform: none;
   line-height: 1;
+  pointer-events: none;
+  transition: opacity .3s .3s;
 }
 
 .icon-cross:before {
   content: "\ea0f";
 }
 
+.icon-tick:before {
+  content: "\00b7"
+}
+.icon-tick:after {
+  content: "XXX"
+}
+.radio {
+  background-color: green;
+}
+
+
+input[type="radio"]:not(:checked):before + label {
+  background-color: red;
+}
+
+input[type="radio"]:checked + label {
+  content: "999";
+}
+
 input[type="radio"] + label:before, label:after {
   display: none;
 }
 
-input[type="radio"]:checked {
-  content: "\2713"
+
+@media (min-width: 48em) {
+  .quiz-answer__label {
+    padding: 3rem 2rem 3rem 8.5rem;
+  }
 }
