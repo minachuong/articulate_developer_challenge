@@ -1,10 +1,23 @@
+.block-knowledge {
+  padding: 3rem 0;
+  transition: padding .5s;
+}
+
+.block-knowledge__row {
+
+}
+
+.block-knowledge__col {
+
+}
+
 .block-knowledge__container {
   box-sizing: content-box;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  max-width: 92rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  max-width: max-content;
 }
 
 .block-knowledge__wrapper {
@@ -21,4 +34,28 @@
   border: 1px solid #ddd;
   box-sizing: border-box;
   box-shadow: 0 0.4rem 1.2rem 0.2rem rgba(0,0,0,.05)
+}
+
+@media (max-width: 33.6875em) {
+  .block-knowledge__wrapper {
+    padding: 6rem 3rem 5rem;
+  }
+  .block-knowledge__container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 33.75em) {
+  .block_knowledge__container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media (min-width: 52.5em) {
+  .block_knowledge__row {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
 }

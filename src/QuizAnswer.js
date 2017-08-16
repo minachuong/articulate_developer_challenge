@@ -8,10 +8,10 @@ class QuizAnswer extends Component {
 
     return (
       <div className="quiz-answer">
-        <Icon id="check" color="#747a7e"/>
-        <Icon id="cross" color="#747a7e"/>
-        <input className="quiz-answer__input" name="answer1" type="radio" id={answer.id} />
+        <input type="radio" className="quiz-answer__input" name="answer1" id={answer.id} />
         <label htmlFor={answer.id} className="quiz-answer__label">
+          <span className="quiz-answer__radio">
+          </span>
           <p>{answer.answer}</p>
         </label>
       </div>
