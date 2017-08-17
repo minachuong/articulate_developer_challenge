@@ -1,19 +1,22 @@
 import React, { Component } from 'react'
 import './QuizAnswer.css'
-import Icon from './Icon'
 
 class QuizAnswer extends Component {  
+  state = {
+    selectedAnswer: ""
+  }
+  
+  handleChange = (event) => {
+    this.setState({selectedAnswer: event.target.value})
+  }
+  
   render () {
     const { answer } = this.props
-
+    console.log(this.state)
     return (
       <div className="quiz-answer">
-        <input type="radio" className="quiz-answer__input" name="answer1" id={answer.id} />
+        <input type="radio" name="answer1" id={answer.id} value={answer.id} onChange={this.handleChange}/>
         <label htmlFor={answer.id} className="quiz-answer__label">
-          <span className="quiz-answer__radio">
-            <i className="icon icon-tick">
-            </i>
-          </span>
           <p>{answer.answer}</p>
         </label>
       </div>

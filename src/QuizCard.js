@@ -18,11 +18,31 @@ class QuizCard extends Component {
       }
     ],
     feedback: "I just love cookies and a warm cup of coffee!",
-    imageURL: "https://cdn.articulate.com/rise/courses/FtHG0DN2jjp0KHxN/d229V-nstxA6tZdi.gif"
+    imageURL: "https://cdn.articulate.com/rise/courses/FtHG0DN2jjp0KHxN/d229V-nstxA6tZdi.gif",
+    selectedAnswer: "",
+    submitted: false,
+  }
+
+  handleChange = (event) => {
+    this.setState({ selectedAnswer: event.target.value })
+  }
+
+  onSubmit = () => {
+    this.setState({ submitted: true })
+  } 
+  
+  addButtonClasses = () => {
+    let defaultButtonClasses = "quiz-card__button "
+    return this.state.selectedAnswer !== "" ? defaultButtonClasses + "button-background" : defaultButtonClasses }
+
+  addActionsClasses = () => {
+    let defaultActionsClasses = "quiz-card__actions "
+    return this.state.submitted ? defaultActionsClasses + "quiz-card__actions--proceed" : defaultActionsClasses
   }
 
   render() {
-    const { question, answers, feedback, imageURL } = this.state
+    const { question, answers, feedback, imageURL, selectedAnswer } = this.state
+
     return (
       <div className="quiz-card">
           <div className="quiz-card__title">
@@ -32,10 +52,19 @@ class QuizCard extends Component {
             <img className="figure-image__image" alt="" src={imageURL} />
           </figure>
           <div className="quiz-card__answers">
-            {answers.map((answer) => <QuizAnswer key={answer.id} answer={answer}/>)}
+          {answers.map((answer) => (
+            <div className="quiz-answer" key={answer.id}>
+               <input type="radio" name="answer1" id={answer.id} value={answer.id} onChange={this.handleChange}/>
+               <label htmlFor={answer.id} className="quiz-answer__label">
+                 <p>{answer.answer}</p>
+               </label>
+             </div>
+          ))}
           </div>
-          <div className="card-action">
-            <button className="btn" type="submit" name="">Submit</button>
+          <div className={this.addActionsClasses()}>
+            <div className="quiz-card__submit">
+              <button className={this.addButtonClasses()} type="submit" disabled={selectedAnswer === ""} onClick={this.onSubmit}>Submit</button>
+            </div>
           </div>
           <div>
             <div className="card-panel grey lighten-1">
