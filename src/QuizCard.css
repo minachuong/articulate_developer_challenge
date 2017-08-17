@@ -112,6 +112,11 @@
   transition: background .3s, color .3s, opacity .3s;
 }
 
+.quiz-card__button:hover:enabled {
+  opacity: .7;
+  transition: opacity .3s;
+}
+
 .quiz-card__button:disabled {
   background-color: silver;
 }
