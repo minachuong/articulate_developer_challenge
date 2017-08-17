@@ -131,11 +131,11 @@
 
 .quiz-card__feedback {
   position: relative;
-  overflow: hidden;
-  min-height: 0;
-  max-height: 0;
+  min-height: 5rem;
+  max-height: 50rem;
   padding-bottom: 0;
   transition: max-height 1s linear .3s, min-height 0ms .3s;
+  display: none;
 }
 
 .quiz-card__feedback-wrap {
@@ -148,16 +148,83 @@
 .quiz-card__feedback .quiz-card__row {
   position: relative;
   padding-top: 0;
-  padding-bottom: 7rem;
-  z-index: 1;
+  padding-bottom: 4rem;
 }
 
 .block-knowledge .quiz-card__feedback--frame .quiz-card__feedback-wrap {
-  padding-top: 3rem;
+  padding-top: 2rem;
 }
 
 .quiz-card__feedback--frame .quiz-card__feedback-wrap {
   background-color: #f8f8f8;
   margin-bottom: 3rem;
   padding-bottom: 1.5rem;
+}
+
+.quiz-card__feedback-icon {
+  display: block;
+  width: 6rem;
+  height: 6rem;
+  margin: 0 auto;
+  opacity: 1;
+  text-align: center;
+  line-height: 6rem;
+  border-radius: 50%;
+  border: .2rem solid #cacbcb;
+  transition: opacity .6s .9s,transform .6s .9s,-webkit-transform .6s .9s;
+}
+
+.quiz-card__feedback--correct {
+  display: block;
+}
+
+.quiz-card__feedback--incorrect {
+ display: block; 
+}
+
+.icon-cross:before {
+  position: relative;
+  content: "\ea0f";
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.3rem;
+  font-family: 'IcoMoon-Free' !important;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+}
+.icon-check:before {
+  position: relative;
+  height: 3rem;
+  content: "\ea10";
+  font-size: 1.9rem;
+  font-family: 'IcoMoon-Free' !important;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 3;
+}
+
+
+.quiz-card__feedback-label {
+  margin-top: .5rem;
+  letter-spacing: .02em;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1;
+}
+
+.quiz-card__feedback-text {
+  font-family: Merriweather !important;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  line-height: 1.7;
+  font-weight: 300;
+  font-size: 1.3rem;
+  word-wrap: break-word;
+  color: #5e5e5e;
+  overflow: auto;
+  -webkit-font-smoothing: antialiased;
+//  transition: opacity .6s 1.05s,transform .6s 1.05s,-webkit-transform .6s 1.05s;
 }

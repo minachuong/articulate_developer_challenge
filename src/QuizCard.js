@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import './QuizAnswer.css'
 import './QuizCard.css'
-import QuizAnswer from './QuizAnswer'
 
 class QuizCard extends Component {
   state = {
@@ -19,14 +18,20 @@ class QuizCard extends Component {
       }
     ],
     feedback: "I just love cookies and a warm cup of coffee!",
+    feedbackClasses: "quiz-card__feedback quiz-card__feedback--frame",
+    actionClasses: "quiz-card__actions",
+    buttonClasses: "quiz-card__button",
     imageURL: "https://cdn.articulate.com/rise/courses/FtHG0DN2jjp0KHxN/d229V-nstxA6tZdi.gif",
     selectedAnswer: "",
     submitted: false,
+    correct: ""
   }
 
   handleChange = (event) => {
-    this.isCorrect(event.target.value) 
-    this.setState({ selectedAnswer: event.target.value })
+    this.setState({ 
+      selectedAnswer: event.target.value,
+      correct: this.isCorrect(event.target.value)    
+    })
   }
 
   isCorrect = (selectedValue) => {
@@ -35,18 +40,18 @@ class QuizCard extends Component {
   }
 
   onSubmit = () => {
-    this.setState({ submitted: true })
+    let activeFeedbackClass = this.state.correct ? "quiz-card__feedback--correct" : "quiz-card__feedback--incorrect" 
+    this.setState({ 
+      submitted: true,
+      actionClasses: "quiz-card__actions quiz-card__actions--proceed",
+      feedbackClasses: `quiz-card__feedback quiz-card__feedback--frame ${activeFeedbackClass}` 
+    })
   } 
   
   addButtonClasses = () => {
     let defaultButtonClasses = "quiz-card__button "
-    return this.state.selectedAnswer !== "" ? defaultButtonClasses + "button-background" : defaultButtonClasses }
+    return this.state.selectedAnswer !== "" ? `${defaultButtonClasses} button-background` : defaultButtonClasses }
 
-  addActionsClasses = () => {
-    let defaultActionsClasses = "quiz-card__actions "
-    return this.state.submitted ? defaultActionsClasses + defaultActionsClasses+"--proceed" : defaultActionsClasses
-  }
-  
   render() {
     const { question, answers, feedback, imageURL, selectedAnswer } = this.state
 
@@ -73,7 +78,7 @@ class QuizCard extends Component {
                  </div>
               ))}
               </div>
-              <div className={this.addActionsClasses()}>
+              <div className={this.state.actionClasses}>
                 <div className="quiz-card__submit">
                   <button className={this.addButtonClasses()} type="submit" disabled={selectedAnswer === ""} onClick={this.onSubmit}>Submit</button>
                 </div>
@@ -81,11 +86,17 @@ class QuizCard extends Component {
             </div>
           </div>
  
-          <div className="quiz-card__feedback quiz-card__feedback--frame">
+          <div className={this.state.feedbackClasses}>
             <div className="quiz-card__row">
               <div className="quiz-card__main">
                 <div className="quiz-card__feedback-wrap">
-
+                  <div className="quiz-card__feedback-icon">
+                    <i className={this.state.correct ? "icon-check" : "icon-cross"}></i>
+                    <div className="quiz-card__feedback-label">{this.state.correct ? "Correct" : "Incorrect"}</div> 
+                  </div>
+                  <div className="quiz-card__feedback-text">
+                    <p>{feedback}</p>
+                  </div>
                 </div>
               </div>
             </div>
