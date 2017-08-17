@@ -2,6 +2,7 @@
   font-family: Lato !important;
   position: relative;
   display: block;
+  font-size: 100%;
 }
 
 .quiz-answer__label {
@@ -19,6 +20,26 @@
   background: #f7f7f8;
 }
 
+[type="radio"]:not(:checked)+label:before, [type="radio"]:not(:checked)+label:after, [type="radio"]:checked+label:before, [type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:before, [type="radio"].with-gap:checked+label:after {
+//  display: none;
+}
+
+input[type="radio"]:not(:checked) + label, input[type="radio"]:checked + label {
+  padding: 2rem 2rem 2rem 6.5rem;
+}
+.quiz-answer__input+.quiz-answer__label .quiz-answer__radio {
+  position: absolute;
+  left: 2rem;
+  height: 2rem;
+  width: 2rem;  
+  top: 3.2rem;
+}
+
+input[type="radio"]:not(:checked)+label, input[type="radio"]:checked+label {
+  position: relative;
+  font-size: 1.6rem;
+  margin: 2rem;
+}
 
 .icon {
   /* use !important to prevent issues with browser extensions that change fonts */
