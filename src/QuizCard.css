@@ -143,6 +143,8 @@
   opacity: 1;
   transform: scale(1.1);
   transition: opacity .6s .6s, transform .6s .6s,-webkit-transform .6s .6s;
+  padding-left: 15%;
+  padding-right: 15%;
 }
 
 .quiz-card__feedback .quiz-card__row {
@@ -227,4 +229,10 @@
   overflow: auto;
   -webkit-font-smoothing: antialiased;
 //  transition: opacity .6s 1.05s,transform .6s 1.05s,-webkit-transform .6s 1.05s;
+}
+
+@media (max-width: 40rem) {
+  .quiz-card__feedback-wrap {
+    display: inline-block;
+  }
 }
