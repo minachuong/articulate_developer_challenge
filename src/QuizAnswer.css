@@ -75,4 +75,11 @@ input[type="radio"]:not(:checked)+label, input[type="radio"]:checked+label {
   .quiz-answer__label {
     padding: 3rem 2rem 3rem 8.5rem;
   }
+  input[type="radio"]:not(:checked)+label, input[type="radio"]:checked+label {
+    padding: 3rem 2rem 6rem 8.5rem;
+  }
+  [type="radio"]:checked+label:before, [type="radio"]:checked+label:after, [type="radio"]:not(:checked)+label:before, [type="radio"]:not(:checked)+label:after {
+    margin: 3.5rem 2rem 2rem 2rem;
+  } 
 }
+
