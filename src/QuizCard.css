@@ -32,15 +32,31 @@
 }
 
 .quiz-card__container {
+  padding: 0;
+  min-height: 31rem;
+  box-shadow: none;
+//  width: 100%;
+//  position: relative;
+//  max-width: 102rem;
+//  background: #fff;
+}
+
+.quiz-card__row {
+  margin: 0;
+  padding: 0;
+}
+
+.quiz-card__main {
+  float: none;
+  margin: 0;
+  padding: 0;
   width: 100%;
-  position: relative;
-  max-width: 102rem;
-  background: #fff;
 }
 
 .quiz-card__answers {
   padding: 1rem 0 2.5rem;
   border-top: .1rem solid #eaeaeb;
+  margin-top: 1.5rem
 }
 
 .figure-image {
@@ -51,4 +67,92 @@
 .figure-image__image {
   max-width: 100%;
   max-height: 38rem;
+}
+
+.quiz-card__actions {
+  height: 4rem;
+}
+
+.quiz-card__actions--proceed {
+  opacity: 0;
+  height: 0;
+  margin: 0;
+  transition: height 0ms .3s, opacity .3s
+}
+
+.quiz-card__submit {
+  box-sizing: border-box;
+  height: 10rem;
+  text-align: center;
+}
+
+.quiz-card__button {
+  font-family: Lato !important;
+  cursor: pointer;
+  outline: none;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+  min-width: 10rem;
+  max-width: 17rem;
+  height: 4rem;
+  font-weight: 700;
+  letter-spacing: .04rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 3.4rem;
+  text-overflow: ellipsis;
+  color: #fff;
+  background-color: #747a7e;
+  border: 2px solid transparent;
+  border-radius: 2rem;
+  box-sizing: border-box;
+  transition: background .3s, color .3s, opacity .3s;
+}
+
+.quiz-card__button:disabled {
+  background-color: silver;
+}
+
+.button-background {
+  background-color: #747a7e !important;
+}
+
+.quiz-card__button--disabled {
+  pointer-events: none;
+}
+
+.quiz-card__feedback {
+  position: relative;
+  overflow: hidden;
+  min-height: 0;
+  max-height: 0;
+  padding-bottom: 0;
+  transition: max-height 1s linear .3s, min-height 0ms .3s;
+}
+
+.quiz-card__feedback-wrap {
+  position: relative;
+  opacity: 1;
+  transform: scale(1.1);
+  transition: opacity .6s .6s, transform .6s .6s,-webkit-transform .6s .6s;
+}
+
+.quiz-card__feedback .quiz-card__row {
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 7rem;
+  z-index: 1;
+}
+
+.block-knowledge .quiz-card__feedback--frame .quiz-card__feedback-wrap {
+  padding-top: 3rem;
+}
+
+.quiz-card__feedback--frame .quiz-card__feedback-wrap {
+  background-color: #f8f8f8;
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
 }
