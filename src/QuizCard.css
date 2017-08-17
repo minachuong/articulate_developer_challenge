@@ -56,6 +56,7 @@
 .quiz-card__answers {
   padding: 1rem 0 2.5rem;
   border-top: .1rem solid #eaeaeb;
+  margin-top: 1.5rem
 }
 
 .figure-image {
