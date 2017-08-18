@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './QuizAnswer.css'
 import './QuizCard.css'
+import './BlockKnowledge.css'
 
 class QuizCard extends Component {
   constructor() {

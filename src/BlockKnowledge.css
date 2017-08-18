@@ -36,6 +36,34 @@
   box-shadow: 0 0.4rem 1.2rem 0.2rem rgba(0,0,0,.05)
 }
 
+.block-knowledge__retake {
+  max-height: 2rem;
+  letter-spacing: .8px;
+  color: #313537;
+  border: 0;
+  background: transparent;
+  transition: opacity .6s;
+  outline: none;
+  opacity: .3; 
+  pointer-events: all;
+  font-size: 1.1rem;
+  align-items: center;
+  display: none;
+  margin: 1rem  auto;
+}
+
+.block-knowledge__retake--show {
+  display: block;
+}
+
+.block-knowledge__retake:hover {
+  opacity: 1;
+}
+
+.block-knowledge__retake:focus { 
+  background: transparent;
+}
+
 @media (max-width: 33.6875em) {
   .block-knowledge__wrapper {
     padding: 6rem 3rem 5rem;
