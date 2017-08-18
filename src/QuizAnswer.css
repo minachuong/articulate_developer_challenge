@@ -17,17 +17,38 @@
   padding: 2rem 2rem 2rem 6.5rem;
 }
 
+.quiz-answer__option {
+  padding-left: 2rem;
+}
+
+.quiz-answer__icon {
+  display: block;
+  opacity: 0;
+}
+
+.quiz-answer__icon--show {
+  opacity: 1;
+  padding-top: 0.1rem; 
+}
+
 .quiz-answer:hover {
   background: #f7f7f8;
 }
 
-input[type="radio"]:not(:checked)+label:before, input[type="radio"]:not(:checked)+label:after, input[type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:after {
+input[type="radio"]:not(:checked)+label:before, input[type="radio"]:not(:checked)+label:after, input[type="radio"]:checked+label:after, input[type="radio"].with-gap:checked+label:after, input[type="radio"]:disabled:checked+label:before {
   border: .1rem solid rgba(49,53,55,.6);
 }
 
 input[type="radio"]:not(:checked)+label, input[type="radio"]:checked+label {
   font-size: 1.6rem;
-  padding: 2rem 2rem 4.5rem 5.5rem;
+  padding: 2rem 2rem 4.5rem 2.5rem;
+  display: inline-flex;
+  color: #313537;
+}
+
+input[type="radio"]:disabled:checked+label:after {
+  background-color: transparent;
+  content: "";
 }
 
 input[type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:after {

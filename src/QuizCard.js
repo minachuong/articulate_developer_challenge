@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './QuizAnswer.css'
 import './QuizCard.css'
 import './BlockKnowledge.css'
+import Icon from './Icon.js'
 
 class QuizCard extends Component {
   constructor() {
@@ -29,6 +30,7 @@ class QuizCard extends Component {
       actionClasses: "quiz-card__actions",
       buttonClasses: "quiz-card__button",
       retakeClasses: "block-knowledge__retake",
+      radioClasses: "quiz-answer__icon",
       imageURL: "https://cdn.articulate.com/rise/courses/FtHG0DN2jjp0KHxN/d229V-nstxA6tZdi.gif",
       selectedAnswer: "", 
       submitted: false,
@@ -60,7 +62,8 @@ class QuizCard extends Component {
       submitted: true,
       actionClasses: "quiz-card__actions quiz-card__actions--proceed",
       feedbackClasses: `quiz-card__feedback quiz-card__feedback--frame ${activeFeedbackClass}`,
-      retakeClasses: "block-knowledge__retake block-knowledge__retake--show" 
+      retakeClasses: "block-knowledge__retake block-knowledge__retake--show", 
+      radioClasses: "quiz-answer__icon quiz-answer__icon--show",
     })
   } 
   
@@ -95,7 +98,10 @@ class QuizCard extends Component {
                     checked={this.state.selectedAnswer === `${answer.id}`}
                     onChange={this.handleChange}/>
                   <label htmlFor={answer.id} className="quiz-answer__label">
-                    <span>
+                    <span className={this.state.radioClasses}>
+                      <Icon name={this.isCorrect(answer.id) ? "check" : "cross"} color="#747a7e"/>
+                    </span>
+                    <span className="quiz-answer__option">
                       <p>{answer.answer}</p>
                     </span>
                   </label>
