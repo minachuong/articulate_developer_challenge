@@ -15,7 +15,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 Hopefully you don't see any lint errors in the console.
 
 ### See it in Action
-[]()
+[https://knowledgeblock-mina.herokuapp.com/](https://knowledgeblock-mina.herokuapp.com/)
 
 ### TODO:
 1. So much refactoring:
@@ -30,6 +30,7 @@ Hopefully you don't see any lint errors in the console.
 3. Pixel Perfect Corrections
     * Feedback text
     * Icons
+4. File Organization
 
 ----
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
