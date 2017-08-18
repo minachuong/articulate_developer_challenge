@@ -99,5 +99,8 @@ input[type="radio"]+label:before, input[type="radio"]+label:after {
   .quiz-answer__option {
     padding-left: 5rem;
   }
+  .quiz-answer, .quiz-answer__disabled {
+    padding: .1rem 0rem;
+  }
 }
 

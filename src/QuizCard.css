@@ -208,11 +208,12 @@
 
 .quiz-card__feedback-label {
   margin-top: .5rem;
-  letter-spacing: .02em;
+  letter-spacing: .05em;
   font-size: 1.1rem;
-  font-weight: 500;
+  font-weight: 700;
   text-align: center;
   line-height: 1;
+  -webkit-font-smoothing: antialiased;
 }
 
 .quiz-card__feedback-text {
