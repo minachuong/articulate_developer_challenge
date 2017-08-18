@@ -1,9 +1,13 @@
-.quiz-answer {
+.quiz-answer, .quiz-answer__disabled {
   font-family: Lato !important;
   position: relative;
   display: block;
   font-size: 100%;
   vertical-align: baseline;
+}
+
+.quiz-answer:hover {
+  background: #f7f7f8;
 }
 
 .quiz-answer__label {
@@ -29,10 +33,6 @@
 .quiz-answer__icon--show {
   opacity: 1;
   padding-top: 0.1rem; 
-}
-
-.quiz-answer:hover {
-  background: #f7f7f8;
 }
 
 .quiz-answer__border--show {
@@ -84,32 +84,6 @@ input[type="radio"]+label:before, input[type="radio"]+label:after {
 
 [type="radio"]:checked+label:before, [type="radio"]:checked+label:after, [type="radio"]:not(:checked)+label:before, [type="radio"]:not(:checked)+label:after {
   margin: 2.5rem 2rem 2rem 2rem;
-}
-
-.icon {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  z-index: 2;
-  text-align: center;
-  width: 1.9rem;
-  height: 1.8rem;
-  font-size: .8rem;
-  font-family: 'IcoMoon-Free' !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  pointer-events: none;
-  transition: opacity .3s .3s;
-}
-
-.icon-tick:before {
-  content: "\00b7"
 }
 
 @media (min-width: 48em) {

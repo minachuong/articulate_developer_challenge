@@ -90,7 +90,7 @@ class QuizCard extends Component {
               </figure>
               <div className="quiz-card__answers">
               {answers.map((answer) => (
-                <div className="quiz-answer" key={answer.id}>
+                <div className={this.state.submitted ? "quiz-answer__disabled" : "quiz-answer"} key={answer.id}>
                   <input 
                     type="radio" 
                     name="answer1" 
