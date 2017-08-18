@@ -1,3 +1,37 @@
+This React App is my built version of the 'Knowledge Check Block' provided by Articulate's Developer Challenge.
+
+### Get The Code
+From a terminal, clone this repo into the folder of your choosing (in this example, I'm using `block-knowledge-mina`)
+`git clone git@github.com:minachuong/articulate_developer_challenge.git block-knowledge-mina`
+
+Then install the project dependencies with yarn. Be sure to cd into the project root first.
+##### `yarn` or `npm install`
+
+In the project directory, you can run:
+##### `yarn start` or `npm start`
+
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Hopefully you don't see any lint errors in the console.
+
+### See it in Action
+[]()
+
+### TODO:
+1. So much refactoring:
+    * Migrate QuizAnswer to its own component
+    * Migrate Retake button to BlockKnowledge component
+    * Consolidate `*--show` classes
+2. Transitions
+    * Border on QuizAnswer
+    * Hiding Submit button on submit is buggy
+    * Appearance of Feedback
+    * BlockKnowledge growing and shrinking as Feedback is displayed/removed
+3. Pixel Perfect Corrections
+    * Feedback text
+    * Icons
+
+----
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
