@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 class Icon extends Component {
   render() {
@@ -21,6 +22,11 @@ class Icon extends Component {
       </svg>
     )
   }
+}
+
+Icon.propTypes = {
+  name: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired
 }
 
 export default Icon
