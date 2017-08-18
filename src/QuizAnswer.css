@@ -35,6 +35,21 @@
   background: #f7f7f8;
 }
 
+.quiz-answer__border--show {
+  position: absolute;
+  transition: width .45s, .3s;
+  top: .5rem;
+  left: 0;
+  bottom: .5rem;
+  width: 100%;
+  border: .2rem solid rgba(49,53,55,.6);
+  display: block;
+}
+
+.quiz-answer__border {
+  display: none;
+}
+
 input[type="radio"]:not(:checked)+label:before, input[type="radio"]:not(:checked)+label:after, input[type="radio"]:checked+label:after, input[type="radio"].with-gap:checked+label:after, input[type="radio"]:disabled:checked+label:before {
   border: .1rem solid rgba(49,53,55,.6);
 }

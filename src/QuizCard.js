@@ -36,7 +36,6 @@ class QuizCard extends Component {
       submitted: false,
       correct: "",
     }
-    
     return initialState 
   }
 
@@ -54,6 +53,10 @@ class QuizCard extends Component {
   isCorrect = (selectedValue) => {
     let matchedAnswer = this.state.answers.filter((answer) => answer.id === selectedValue)
     return matchedAnswer[0].correct
+  }
+
+  isSelectedAnswer = (answer) => {
+    return this.state.selectedAnswer === answer
   }
 
   onSubmit = () => {
@@ -95,7 +98,7 @@ class QuizCard extends Component {
                     id={answer.id} 
                     value={answer.id} 
                     disabled={this.state.submitted}
-                    checked={this.state.selectedAnswer === `${answer.id}`}
+                    checked={this.isSelectedAnswer(answer.id)}
                     onChange={this.handleChange}/>
                   <label htmlFor={answer.id} className="quiz-answer__label">
                     <span className={this.state.radioClasses}>
@@ -105,6 +108,8 @@ class QuizCard extends Component {
                       <p>{answer.answer}</p>
                     </span>
                   </label>
+                  <span className={this.isSelectedAnswer(answer.id) && this.state.submitted ? "quiz-answer__border--show" : ""}>
+                  </span>
                 </div>
               ))}
               </div>
