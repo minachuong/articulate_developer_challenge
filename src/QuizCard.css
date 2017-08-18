@@ -150,7 +150,7 @@
 .quiz-card__feedback .quiz-card__row {
   position: relative;
   padding-top: 0;
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
 }
 
 .block-knowledge .quiz-card__feedback--frame .quiz-card__feedback-wrap {
@@ -181,7 +181,7 @@
 }
 
 .quiz-card__feedback--incorrect {
- display: block; 
+  display: block; 
 }
 
 .icon-cross:before {
@@ -206,7 +206,6 @@
   line-height: 3;
 }
 
-
 .quiz-card__feedback-label {
   margin-top: .5rem;
   letter-spacing: .02em;
@@ -217,7 +216,7 @@
 }
 
 .quiz-card__feedback-text {
-  font-family: Merriweather !important;
+  font-family: 'Merriweather' !important;
   margin-top: 4rem;
   margin-bottom: 1.5rem;
   text-align: center;
@@ -235,4 +234,39 @@
   .quiz-card__feedback-wrap {
     display: inline-block;
   }
+}
+
+.icon-reload:before {
+  content: "\e984";
+  font-family: 'IcoMoon-Free' !important;
+  font-style: normal;
+  padding-right: 1rem;
+}
+
+.block-knowledge__retake {
+  max-height: 2rem;
+  letter-spacing: .8px;
+  color: #313537;
+  border: 0;
+  background: transparent;
+  transition: opacity .6s;
+  outline: none;
+  opacity: .3;
+  pointer-events: all;
+  font-size: 1.1rem;
+  align-items: center;
+  display: none;
+  margin: 1rem  auto;
+}
+
+.block-knowledge__retake--show {
+  display: block;
+}
+
+.block-knowledge__retake:hover {
+  opacity: 1;
+}
+
+.block-knowledge__retake:focus { 
+  background: transparent;
 }

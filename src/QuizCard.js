@@ -3,28 +3,42 @@ import './QuizAnswer.css'
 import './QuizCard.css'
 
 class QuizCard extends Component {
-  state = {
-    question: "What is this a picture of?",
-    answers: [
-      {
-        "id": "cookies",
-        "answer": "Cookies and coffee",
-        "correct": true
-      },
-      {
-        "id": "donuts",
-        "answer": "Donuts and cider",
-        "correct": false 
-      }
-    ],
-    feedback: "I just love cookies and a warm cup of coffee!",
-    feedbackClasses: "quiz-card__feedback quiz-card__feedback--frame",
-    actionClasses: "quiz-card__actions",
-    buttonClasses: "quiz-card__button",
-    imageURL: "https://cdn.articulate.com/rise/courses/FtHG0DN2jjp0KHxN/d229V-nstxA6tZdi.gif",
-    selectedAnswer: "",
-    submitted: false,
-    correct: ""
+  constructor() {
+    super();
+    this.state = this.getInitialState()
+  }
+
+  getInitialState = () => {
+    const initialState = {
+      question: "What is this a picture of?",
+      answers: [
+        {
+          "id": "cookies",
+          "answer": "Cookies and coffee",
+          "correct": true
+        },
+        {
+          "id": "donuts",
+          "answer": "Donuts and cider",
+          "correct": false 
+        }   
+      ],  
+      feedback: "I just love cookies and a warm cup of coffee!",
+      feedbackClasses: "quiz-card__feedback quiz-card__feedback--frame",
+      actionClasses: "quiz-card__actions",
+      buttonClasses: "quiz-card__button",
+      retakeClasses: "block-knowledge__retake",
+      imageURL: "https://cdn.articulate.com/rise/courses/FtHG0DN2jjp0KHxN/d229V-nstxA6tZdi.gif",
+      selectedAnswer: "", 
+      submitted: false,
+      correct: ""
+    }
+    
+    return initialState 
+  }
+
+  resetState = () => {
+    this.setState(this.getInitialState());
   }
 
   handleChange = (event) => {
@@ -44,7 +58,8 @@ class QuizCard extends Component {
     this.setState({ 
       submitted: true,
       actionClasses: "quiz-card__actions quiz-card__actions--proceed",
-      feedbackClasses: `quiz-card__feedback quiz-card__feedback--frame ${activeFeedbackClass}` 
+      feedbackClasses: `quiz-card__feedback quiz-card__feedback--frame ${activeFeedbackClass}`,
+      retakeClasses: "block-knowledge__retake block-knowledge__retake--show" 
     })
   } 
   
@@ -69,23 +84,33 @@ class QuizCard extends Component {
               <div className="quiz-card__answers">
               {answers.map((answer) => (
                 <div className="quiz-answer" key={answer.id}>
-                   <input type="radio" name="answer1" className="quiz-answer__input" id={answer.id} value={answer.id} onClick={this.handleChange}/>
-                   <label htmlFor={answer.id} className="quiz-answer__label">
-                     <span>
-                       <p>{answer.answer}</p>
-                     </span>
-                   </label>
-                 </div>
+                  <input 
+                    type="radio" 
+                    name="answer1" 
+                    className="quiz-answer__input" 
+                    id={answer.id} 
+                    value={answer.id} 
+                    onClick={this.handleChange}/>
+                  <label htmlFor={answer.id} className="quiz-answer__label">
+                    <span>
+                      <p>{answer.answer}</p>
+                    </span>
+                  </label>
+                </div>
               ))}
               </div>
               <div className={this.state.actionClasses}>
                 <div className="quiz-card__submit">
-                  <button className={this.addButtonClasses()} type="submit" disabled={selectedAnswer === ""} onClick={this.onSubmit}>Submit</button>
+                  <button 
+                    className={this.addButtonClasses()} 
+                    type="submit" 
+                    disabled={selectedAnswer === ""} 
+                    onClick={this.onSubmit}>Submit
+                  </button>
                 </div>
               </div>
             </div>
           </div>
- 
           <div className={this.state.feedbackClasses}>
             <div className="quiz-card__row">
               <div className="quiz-card__main">
@@ -101,6 +126,10 @@ class QuizCard extends Component {
               </div>
             </div>
           </div>  
+          <button className={this.state.retakeClasses} onClick={this.resetState}>
+            <i className="icon-reload"></i>
+            <span>TAKE AGAIN</span>
+          </button>
         </div>
       </div>  
     )
