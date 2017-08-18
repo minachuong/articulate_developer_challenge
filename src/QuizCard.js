@@ -31,7 +31,7 @@ class QuizCard extends Component {
       imageURL: "https://cdn.articulate.com/rise/courses/FtHG0DN2jjp0KHxN/d229V-nstxA6tZdi.gif",
       selectedAnswer: "", 
       submitted: false,
-      correct: ""
+      correct: "",
     }
     
     return initialState 
@@ -39,7 +39,7 @@ class QuizCard extends Component {
 
   resetState = () => {
     this.setState(this.getInitialState());
-  }
+   }
 
   handleChange = (event) => {
     this.setState({ 
@@ -90,7 +90,9 @@ class QuizCard extends Component {
                     className="quiz-answer__input" 
                     id={answer.id} 
                     value={answer.id} 
-                    onClick={this.handleChange}/>
+                    disabled={this.state.submitted}
+                    checked={this.state.selectedAnswer === `${answer.id}`}
+                    onChange={this.handleChange}/>
                   <label htmlFor={answer.id} className="quiz-answer__label">
                     <span>
                       <p>{answer.answer}</p>
