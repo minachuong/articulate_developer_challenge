@@ -91,10 +91,13 @@ input[type="radio"]+label:before, input[type="radio"]+label:after {
     padding: 3rem 2rem 3rem 8.5rem;
   }
   input[type="radio"]:not(:checked)+label, input[type="radio"]:checked+label {
-    padding: 3rem 2rem 6rem 8.5rem;
+    padding: 3rem 2rem 6rem 2.5rem;
   }
   [type="radio"]:checked+label:before, [type="radio"]:checked+label:after, [type="radio"]:not(:checked)+label:before, [type="radio"]:not(:checked)+label:after {
     margin: 3.5rem 2rem 2rem 2rem;
   } 
+  .quiz-answer__option {
+    padding-left: 5rem;
+  }
 }
 
